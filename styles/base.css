@@ -101,7 +101,6 @@ p {
 h3 {
     padding: 10px;
     text-align: center;
-    font-family: "Nunito", sans-serif;
 }
 
 .flag {
@@ -127,6 +126,7 @@ h2 {
     text-align: center;
     height: 30px;
     align-items: center;
+    font-family: "Nunito", sans-serif;
 }
 
 footer {
