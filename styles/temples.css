@@ -1,0 +1,132 @@
+:root {
+    --text1-color: #fff;
+    --hf-background: #2c3e50;
+    --text2-color: #333;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Robot', sans-serif;
+    line-height: 1.6;
+    color: var(--text2-color);
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--hf-background);
+    color: var(--text1-color);
+    padding: 1rem;
+    text-align: left;
+}
+
+header p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+nav {
+    display: none;
+    width: 100%;
+}
+
+nav.open {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+nav a {
+    display: block;
+    color: var(--text1-color);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
+    box-shadow: 0 0 0 0 var(--text1-color);
+}
+
+main {
+    max-width: 800px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+main h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--hf-background);
+}
+
+figure {
+    margin: 0;
+    background-color: var(--text2-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f8f9fa;
+}
+
+footer {
+    background-color: var(--hf-background);
+    color: var(--text1-color);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+#hamburger {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: var(--text1-color);
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+
+#hamburger:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#hamburger::before {
+    content: "☰";
+}
+
+#hamburger.open::before {
+    content: "X";
+}
