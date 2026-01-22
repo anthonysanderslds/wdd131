@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week03 Assignment: Country Page</title>
+    <meta name="description" content="Country Page containing week 3 assignment details.">
+    <meta name="author" content="Anthony Sanders">
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/place-large.css" media="(min-width: 600px)">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Brazil</h1>
+    </header>
+    <main>
+        <div class="hero-container">
+            <picture class="hero">
+                <source srcset="images/hero-large.webp" media="(min-width: 1000px)" >
+                <source media="(min-width: 800px)" srcset="images/hero-medium.webp">
+                <img src="images/hero-small.webp" alt="O Cristo Redentor Statue in Brazil" width="501" height="667">
+            </picture>
+            <section class="data">
+                <h2>Data</h2>
+                <ul>
+                    <li>Area: 8,514,877 km²</li>
+                    <li>Population: ~214 million</li>
+                    <li>Capital: Brasília</li>
+                    <li>Languages: Portuguese (Brazil)</li>
+                    <li>Currency: Brazilian Real (R$, BRL)</li>
+                    <li>Timezone: UTC-2 through UTC-5</li>
+                    <li>Calling Code: +55</li>
+                    <li>Internet TLD: .br</li>
+                </ul>
+            </section>
+            <section class="weather">
+                <h2>Weather</h2>
+                <img src="images/weather-icon.svg" alt="Weather Icon">
+                <ul>
+                    <li>Temperature: 25°C</li>
+                    <li>Conditions: Partly Sunny</li>
+                    <li>Wind Speed: 15 km/h</li>
+                    <li>Wind Chill: <span id="windchill"></span></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span>| Anthony Sanders | WI, USA</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
