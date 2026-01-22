@@ -24,10 +24,9 @@ body {
 }
 
 h1,
-h2
-{
-font-family: var(--font);
-padding: 1rem 0;
+h2 {
+    font-family: var(--font);
+    padding: 1rem 0;
 }
 
 h1 {
@@ -66,7 +65,7 @@ main {
 }
 
 .hero img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     margin-top: 10px;
 }
@@ -86,4 +85,49 @@ section {
 section img {
     width: 60px;
     height: 80px;
+}
+
+@media screen and (min-width: 600px) {
+    .hero-container {
+        position: relative;
+    }
+
+    section {
+        border-radius: var(--border);
+        background-color: rgba(245, 245, 245, 0.9);
+    }
+
+    .data h2,
+    .weather h2 {
+        margin-left: -1rem;
+        background-color: rgba(0, 151, 57, .9);
+        max-width: 75%;
+        margin-top: 0.5rem;
+    }
+
+    section ul {
+        padding: 0 10px;
+    }
+
+    .data {
+        position: absolute;
+        top: 30px;
+        left: 20px;
+    }
+
+    .weather {
+        position: absolute;
+        bottom: 30px;
+        right: 20px;
+    }
+
+    .weather img {
+        display: none;
+    }
+
+    .weather h2::after {
+        content: "⛅";
+        font-size: 1.5rem;
+        margin-left: 0.5rem;
+    }
 }
