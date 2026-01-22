@@ -23,12 +23,6 @@ body {
     flex-direction: column;
 }
 
-h1,
-h2 {
-    font-family: var(--font);
-    padding: 1rem 0;
-}
-
 h1 {
     color: var(--accent-color);
 }
@@ -77,7 +71,8 @@ main {
 }
 
 section {
-    background-color: var(--accent-color);
+    border-radius: 8px;
+    background-color: rgba(245, 245, 245, 0.9);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -90,11 +85,6 @@ section img {
 @media screen and (min-width: 600px) {
     .hero-container {
         position: relative;
-    }
-
-    section {
-        border-radius: var(--border);
-        background-color: rgba(245, 245, 245, 0.9);
     }
 
     .data h2,
