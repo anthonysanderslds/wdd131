@@ -126,29 +126,35 @@ const navFilter = document.querySelector("nav");
 navFilter.addEventListener("click", (event) => {
 
     let filterTemples;
+    let title = document.querySelector("#title");
 
     if (event.target.textContent === "Old") {
         filterTemples = temples.filter(temple => {
             return new Date(temple.dedicated).getFullYear() < 1900;
         });
+        title.textContent = "Old";
     }
     else if (event.target.textContent === "New") {
         filterTemples = temples.filter(temple => {
             return new Date(temple.dedicated).getFullYear() > 2000;
         });
+        title.textContent = "New";
     }
     else if (event.target.textContent === "Large") {
         filterTemples = temples.filter(temple => {
             return temple.area > 90000;
         });
+        title.textContent = "Large";
     }
     else if (event.target.textContent === "Small") {
         filterTemples = temples.filter(temple => {
             return temple.area < 10000;
         });
+        title.textContent = "Small";
     }
     else {
         filterTemples = temples;
+        title.textContent = "Home";
     }
 
     displayTemples(filterTemples)
