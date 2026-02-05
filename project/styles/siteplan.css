@@ -42,6 +42,11 @@ header {
     gap: 1rem;
 }
 
+header img{
+    width: 125px;
+    height: auto;
+}
+
 section {
     position: relative;
     padding: .75rem;
