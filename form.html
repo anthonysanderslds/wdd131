@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form</title>
+    <meta name="description" content="Form assignment for Week 5">
+    <meta name="author" content="Anthony Sanders">
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+</head>
+
+<body>  
+    <h1>Product Review</h1>
+    <main>
+        <form method="get" action="review.html" class="pf1">
+            <fieldset>
+                <label for="productName">Product Name</label>
+                <select name="productName" id="productName" required>
+                    <option value="" disabled selected>Select a Product...</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="rating">Overall Rating</label>
+                <label><input type="radio" name="rating" value="oneStar" required> ☆</label>
+                <label><input type="radio" name="rating" value="twoStar" required> ☆☆</label>
+                <label><input type="radio" name="rating" value="threeStar" required> ☆☆☆</label>
+                <label><input type="radio" name="rating" value="fourStar" required> ☆☆☆☆</label>
+                <label><input type="radio" name="rating" value="fiveStar" required> ☆☆☆☆☆</label>
+            </fieldset>
+            <fieldset>
+                <label for="dateInstalled">Date of Installation</label>
+                <input type="date" name="dateInstalled" id="dateInstalled" required>
+            </fieldset>
+            <fieldset>
+                <label>Which features did you find useful in the product?</label>
+                <label><em>(Check all that apply)</em></label>
+                <label><input type="checkbox" name="features" value="durability" id="durability"> Durability</label>
+                <label><input type="checkbox" name="features" value="easeOfUse" id="easeOfUse"> Ease of Use</label>
+                <label><input type="checkbox" name="features" value="performance" id="performance"> Performance</label>
+                <label><input type="checkbox" name="features" value="design" id="design"> Design</label>
+            </fieldset>
+            <fieldset>
+                <label for="textReview">Written Review&nbsp;&nbsp;<em> (Optional)</em></label>
+                <textarea id="textReview" name="textReview" rows="4" cols="50"></textarea>
+            </fieldset>
+            <fieldset>
+                <label for="userName">Your Name&nbsp;&nbsp;<em>(Optional)</em></label>
+                <input type="text" id="userName" name="userName">
+            </fieldset>
+            <input type="submit" value="Post Product Review">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentYear"></span>| Anthony Sanders | WI, USA</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>

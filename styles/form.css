@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: lightgray;
+    --border-color: #999999;
+    --input-background: #ffffff;
+    --button-background: #003d82;
+    --button-text: #ffffff;
+    --button-hover: #002855;
+    --focus-color: #0066cc;
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 1.5rem;
+}
+
+label[for="productName"]::after,
+label[for="rating"]::after,
+label[for="dateInstalled"]::after {
+    content: " *";
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-large);
+}
+
+p{
+    padding: .5rem;
+}
+
+form {
+    padding: 0.5rem;
+    background-color: var(--background-color);
+}
+
+fieldset{
+    border: none;
+    padding: .5rem;
+}
+
+fieldset label {
+    display: flex;
+    align-items: center;
+}
+
+fieldset > label:first-of-type {
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+h1,
+footer {
+    background-color: #001B3A;
+    color: bisque;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+label{
+    display: block;
+}
+
+label em {
+    color: #003d82;
+    font-size: small;
+}
+
+.optional{
+    display: flex;
+}
+
+input[type="text"],
+input[type="date"],
+select, textarea{
+    display: block;
+    width: 100%;
+    padding: var(--spacing-medium);
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-background);
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline: solid 2px var(--focus-color);
+    outline-offset: 2px;
+}
+
+input[type="radio"],
+input[type="checkbox"]
+{
+    margin-right: var(--spacing-small);
+    width: 24px;
+    height: 24px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: var(--spacing-medium);
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: var(--spacing-large);
+}
+
+input[type="submit"]:hover {
+    background-color: var(--button-hover);
+}
+
+@media (min-width: 600px) {
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: var(--spacing-large);
+    }
+
+    fieldset:nth-of-type(2) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    input[type="radio"]{
+        margin: 0;
+    }
+
+    fieldset:nth-of-type(2) label:first-of-type {
+        flex-basis: 100%;
+    }
+
+    fieldset:nth-of-type(2) label:not(:first-of-type){
+        flex: 0 0 auto;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    input[type="submit"] {
+        width: auto;
+        min-width: 200px;
+        padding: var(--spacing-medium) var(--spacing-large);
+        display: block;
+        margin: auto;
+    }
+}
