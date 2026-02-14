@@ -10,6 +10,15 @@ if (lastModified) {
     lastModified.textContent = `Last Modified: ${document.lastModified}`;
 }
 
+// Hamburger menu functionality
+const hamburger = document.getElementById('menu');
+const navigation = document.querySelector('nav');
+
+hamburger.addEventListener('click', () => {
+    navigation.classList.toggle('show');
+    hamburger.classList.toggle('show');
+});
+
 const equipment = [
     {
         type: "Shoe Sorter",
