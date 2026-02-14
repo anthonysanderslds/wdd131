@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSP8 Equipment Details</title>
+    <meta name="description" content="Equipment Details page outlining equipment used at MSP8.">
+    <meta name="author" content="Anthony Sanders">
+    <link rel="stylesheet" href="styles/leadership.css">
+    <script src="scripts/leadership.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/msp8-logo.webp" alt="MSP8 Logo" loading="lazy">
+        <div class="header-content">
+            <h1>Amazon Sortation Center - MSP8</h1>
+            <button id="menu" aria-label="Toggle navigation menu"></button>
+            <div class="nav-container">
+                <nav>
+                    <a href="/project/index.html">Home</a>
+                    <a href="/project/equipment.html">Equipment Technology</a>
+                    <a href="/project/leadership.html">Leadership Organization</a>
+                    <a href="/project/form.html">Feedback</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <aside class="filters">
+            <h2>Filter Options</h2>
+            <button id="all" class="active">All Leaders</button>
+            <button id="operations">Operations</button>
+            <button id="hr">Human Resources</button>
+            <button id="learning">Learning</button>
+        </aside>
+        <div id="leadership-container"></div>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> | Anthony Sanders | WI, USA</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>

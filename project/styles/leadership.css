@@ -1,0 +1,296 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --head-foot-background: #131A22;
+    --text-color1: black;
+    --accent1: #146EB4;
+    --main-background: #FFFFFF;
+    --section-background: #FF9900;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--main-background);
+}
+
+/* MOBILE-FIRST HEADER STYLES */
+header {
+    background-color: var(--head-foot-background);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.header-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-content h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Hamburger Menu Button */
+#menu {
+    font-size: 2rem;
+    border: none;
+    background: none;
+    color: var(--main-background);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.show::before {
+    content: "✕";
+}
+
+/* Navigation - Hidden by default on mobile */
+nav {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+nav.show {
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--main-background);
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* MAIN CONTENT - MOBILE FIRST */
+main {
+    margin: 1rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    flex: 1;
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    color: var(--head-foot-background);
+}
+
+/* FILTERS SECTION - MOBILE */
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--text-color1);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filters h2 {
+    padding-bottom: 1rem;
+}
+
+.filters button {
+    padding: 10px 0.75rem;
+    background-color: var(--head-foot-background);
+    color: var(--main-background);
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.filters button:hover {
+    background-color: #0d5a94;
+    transform: translateY(-2px);
+}
+
+.filters button:active {
+    transform: translateY(0);
+}
+
+/* LEADERSHIP CONTAINER - MOBILE (SINGLE COLUMN) */
+#leadership-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+#leadership-container figure {
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* DEPARTMENT COLOR CODING */
+.dept-operations {
+    background-color: darkred;
+    color: white;
+}
+
+.dept-safety {
+    background-color: darkgreen;
+    color: white;
+}
+
+.dept-hr {
+    background-color: purple;
+    color: white;
+}
+
+.dept-learning {
+    background-color: blue;
+    color: white;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--head-foot-background);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* DESKTOP STYLES - 600px and above */
+@media (min-width: 600px) {
+    /* Header - Horizontal layout */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header img {
+        width: 125px;
+    }
+
+    .header-content {
+        flex: 1;
+        align-items: center;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+        color: var(--main-background);
+    }
+
+    /* Hide hamburger menu on desktop */
+    #menu {
+        display: none;
+    }
+
+    /* Show navigation horizontally on desktop */
+    nav {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        width: auto;
+    }
+
+    nav a {
+        background-color: transparent;
+        padding: 0.5rem 1rem;
+    }
+
+    nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Main content - Two column layout */
+    main {
+        grid-template-columns: 200px 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Filters - Vertical with right border */
+    .filters {
+        border-bottom: none;
+        border-right: 1px solid var(--head-foot-background);
+        padding-right: 1rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    /* Leadership container - 6 column grid for org chart */
+    #leadership-container {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    #leadership-container figure {
+        max-width: none;
+        margin: 0;
+    }
+
+    /* Position Level 1 leaders (Anthony and ZamZam) */
+    #leadership-container > figure:nth-child(1) {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    #leadership-container > figure:nth-child(2) {
+        grid-column: 6;
+        grid-row: 1;
+    }
+
+    /* Position Level 2 leaders in row 2 */
+    #leadership-container > figure:nth-child(3),
+    #leadership-container > figure:nth-child(4),
+    #leadership-container > figure:nth-child(5),
+    #leadership-container > figure:nth-child(6),
+    #leadership-container > figure:nth-child(7) {
+        grid-row: 2;
+    }
+}
+

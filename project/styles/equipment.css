@@ -1,0 +1,288 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --head-foot-background: #131A22;
+    --text-color1: black;
+    --accent1: #146EB4;
+    --main-background: #FFFFFF;
+    --section-background: #FF9900;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--main-background);
+}
+
+/* MOBILE-FIRST HEADER STYLES */
+header {
+    background-color: var(--head-foot-background);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.header-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-content h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Hamburger Menu Button */
+#menu {
+    font-size: 2rem;
+    border: none;
+    background: none;
+    color: var(--main-background);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.show::before {
+    content: "✕";
+}
+
+/* Navigation - Hidden by default on mobile */
+nav {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+nav.show {
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--main-background);
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* MAIN CONTENT */
+main {
+    margin: 0 auto;
+    padding: 1rem;
+    flex: 1;
+    width: 100%;
+    max-width: 1400px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    color: var(--head-foot-background);
+}
+
+h2 {
+    background-color: var(--section-background);
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+}
+
+section {
+    position: relative;
+    padding: 0.75rem;
+    border: 1px solid var(--head-foot-background);
+    margin: 0.25rem;
+    width: 100%;
+}
+
+/* EQUIPMENT CARDS CONTAINER */
+#mhe-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+#mhe-container figure {
+    border: 1px solid var(--head-foot-background);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--section-background);
+}
+
+#mhe-container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#mhe-container h3 {
+    font-size: 1.5rem;
+    color: var(--text-color1);
+    margin-top: 0.75rem;
+}
+
+#mhe-container p {
+    color: var(--text-color1);
+}
+
+/* FLIP CARD FUNCTIONALITY */
+.flip-card {
+    perspective: 1000px;
+    width: 100%;
+    height: 330px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+.card-front::after {
+    content: "↻";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--section-background);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--head-foot-background);
+}
+
+.card-back p {
+    color: black;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+.flip-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--head-foot-background);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* DESKTOP STYLES - 600px and above */
+@media (min-width: 600px) {
+    /* Header - Horizontal layout */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header img {
+        width: 125px;
+    }
+
+    .header-content {
+        flex: 1;
+        align-items: center;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+        color: var(--main-background);
+    }
+
+    /* Hide hamburger menu on desktop */
+    #menu {
+        display: none;
+    }
+
+    /* Show navigation horizontally on desktop */
+    nav {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        width: auto;
+    }
+
+    nav a {
+        background-color: transparent;
+        padding: 0.5rem 1rem;
+    }
+
+    nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Main content adjustments */
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Equipment cards - Multiple columns on desktop */
+    #mhe-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
