@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSP8 Equipment Details</title>
-    <meta name="description" content="Equipment Details page outlining equipment used at MSP8.">
+    <title>MSP8 Feedback Form</title>
+    <meta name="description" content="Submit feedback about your visit to Amazon Sortation Center MSP8.">
     <meta name="author" content="Anthony Sanders">
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/form.css">
@@ -17,7 +17,7 @@
         <img src="images/msp8-logo.webp" alt="MSP8 Logo" loading="lazy">
         <div class="header-content">
             <h1>Amazon Sortation Center - MSP8</h1>
-            <button id="menu" aria-label="Toggle navigation menu"></button>
+            <button id="menu" aria-label="Toggle navigation menu">☰</button>
             <div class="nav-container">
                 <nav>
                     <a href="index.html">Home</a>
@@ -32,33 +32,36 @@
         <h2>MSP8 Feedback Form</h2>
         <form method="get" action="feedback.html">
             <fieldset>
-                <label>Overall Rating</label>
+                <legend>Overall Rating</legend>
                 <label for="one"><input type="radio" name="rating" id="one" value="oneStar" required> ☆</label>
                 <label for="two"><input type="radio" name="rating" id="two" value="twoStar" required> ☆☆</label>
                 <label for="three"><input type="radio" name="rating" id="three" value="threeStar" required> ☆☆☆</label>
                 <label for="four"><input type="radio" name="rating" id="four" value="fourStar" required> ☆☆☆☆</label>
                 <label for="five"><input type="radio" name="rating" id="five" value="fiveStar" required> ☆☆☆☆☆</label>
             </fieldset>
+
+            <label for="dateInstalled">Date of Visit</label>
+            <input type="date" name="dateInstalled" id="dateInstalled" required>
+
             <fieldset>
-                <label for="dateInstalled">Date of Visit</label>
-                <input type="date" name="dateInstalled" id="dateInstalled" required>
-            </fieldset>
-            <fieldset>
-                <label>Which did you like most about your visit to MSP8?</label>
+                <legend>Which did you like most about your visit to MSP8?</legend>
                 <label><em>(Check all that apply)</em></label>
-                <label for="leaders"><input type="checkbox" name="feedback" value="leaders" id="leaders"> Leaders</label>
-                <label for="organization"><input type="checkbox" name="feedback" value="organization" id="ogranization"> Organization</label>
-                <label for="performance"><input type="checkbox" name="feedback" value="performance" id="performance"> Performance</label>
-                <label for="cleanliness"><input type="checkbox" name="feedback" value="cleanliness" id="cleanliness"> Cleanliness</label>
+                <label for="leaders"><input type="checkbox" name="feedback" value="leaders" id="leaders">
+                    Leaders</label>
+                <label for="organization"><input type="checkbox" name="feedback" value="organization" id="organization">
+                    Organization</label>
+                <label for="performance"><input type="checkbox" name="feedback" value="performance" id="performance">
+                    Performance</label>
+                <label for="cleanliness"><input type="checkbox" name="feedback" value="cleanliness" id="cleanliness">
+                    Cleanliness</label>
             </fieldset>
-            <fieldset>
-                <label for="textReview">Written Review&nbsp;&nbsp;<em> (Optional)</em></label>
-                <textarea id="textReview" name="textReview" rows="4" cols="50"></textarea>
-            </fieldset>
-            <fieldset>
-                <label for="userName">Your Name&nbsp;&nbsp;<em>(Optional)</em></label>
-                <input type="text" id="userName" name="userName">
-            </fieldset>
+
+            <label for="textReview">Written Review&nbsp;&nbsp;<em> (Optional)</em></label>
+            <textarea id="textReview" name="textReview" rows="4" cols="50"></textarea>
+
+            <label for="userName">Your Name&nbsp;&nbsp;<em>(Optional)</em></label>
+            <input type="text" id="userName" name="userName">
+
             <input type="submit" value="Submit Feedback">
         </form>
     </main>
